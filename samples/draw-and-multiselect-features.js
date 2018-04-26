@@ -1,9 +1,10 @@
 var drawTool,
   selectTool,
+  Fortesting,
   modifyTool;
 
 window.onload = function (){
-  var Fortesting = new Datatang.FeatureLayer()
+   Fortesting = new Datatang.FeatureLayer()
   var extent = [0,0,1280,800]
 
   //随机添加i个点
@@ -116,9 +117,12 @@ window.onload = function (){
 var polyF
 
 function onDrawClick () {
-  if(polyF.styleHighLight) {
-    polyF.styleHighLight = false
-  }else{
-    polyF.styleHighLight = true
-  }
+  // if(polyF.styleHighLight) {
+  //   polyF.styleHighLight = false
+  // }else{
+  //   polyF.styleHighLight = true
+  // }
+
+
+  Fortesting.removeFeature(polyF)
 }
