@@ -36,7 +36,7 @@ const removeListeners = function (target, type) {
     if (listenerMap) {
       Reflect.deleteProperty(listenerMap, type)
       if (Object.keys(listenerMap).length === 0) {
-        Reflect.deleteProperty(target, ol_lm)
+        // Reflect.deleteProperty(target, ol_lm)
       }
     }
   }
