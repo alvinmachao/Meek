@@ -19,7 +19,7 @@ window.onload = function () {
     new Datatang.Feature(extent)]
 
   // 将会获取缺省样式
-  var featureLayer = new Datatang.FeatureLayer()
+  featureLayer = new Datatang.FeatureLayer()
   featureLayer.addFeatures(features)
   
   var mapextent = [0, 0, 2783, 2125];
@@ -46,16 +46,27 @@ window.onload = function () {
     })
   });
   
-  var select = new Datatang.Select()
+   select = new Datatang.Select()
   
   var modifyTool = new Datatang.Modify()
+
+  delefeature = null
   
   // add select-end event linstener
   select.addEventListener(Datatang.SelectEvent.EventType.SELECT, function(event) {
     modifyTool.features = event.selectedFeatures
+    delefeature = modifyTool.features[0]
   })
   
   map.addComponents(modifyTool)
   map.addComponents(select)
+}
+
+
+function onDrawClick () {
+
+  select.clear()
+
+  featureLayer.removeFeature(delefeature)
 }
 

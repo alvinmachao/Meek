@@ -123,6 +123,5 @@ function onDrawClick () {
   //   polyF.styleHighLight = true
   // }
 
-
   Fortesting.removeFeature(polyF)
 }
